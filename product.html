@@ -23,9 +23,9 @@
 </div>
   <div class="h-[555px] w-[500px] bg-gray-50 relative top-[10px] left-[50px]">
     <div class="h-[250px] w-[250px] rounded-[50%] bg-yellow-300 relative top-[80px] left-[50px]"></div>
-    <img src="../bag2.png" alt="" class=" h-[450px] relative top-[-287px] left-[150px]">
-    <img src="../bag-removebg-preview.png" alt="" class="h-40  relative top-[-320px] left-[150px]">
-    <img src="../bag 3.png" alt="" class="h-44  relative top-[-480px] left-[270px]">
+    <img src="../bag2.png" alt="" class=" h-[450px] relative top-[-287px] left-[150px] " id="toggleImage"  onclick="toggleImageSource()">
+    <img src="../bag-removebg-preview.png" alt="" class="h-40  absolute top-[360px] left-[150px]">
+    <img src="../bag 3.png" alt="" class="h-44  absolute top-[360px] left-[270px]">
   </div>
   <div class="h-[555px] w-[580px] bg-gray-50 absolute top-[90px] left-[560px] p-6 pl-32">
     <h2  class="text-red-600 font-semibold"> Fashion Handbags</h2>
@@ -128,7 +128,7 @@
          <a class="text-white hover:text-black" href="#"> Terms of Service</a>
         </li>
         <li>
-         <a class="text-white hover:text-black" href="#">FAQ </a>
+         <a class="text-white hover:text-black" href="#"> FAQ </a>
         </li>
        </ul>
       </div>
@@ -139,6 +139,29 @@
      </div>
     </div>
    </footer>
+   <script>
+    function toggleImageSource() {
+        const img = document.getElementById("toggleImage");
+        
+        // Define the image sources
+        const img1 = "../bag-removebg-preview.png";
+        const img2 = "../bag 3.png";
+        
+        // Check the current source and toggle it
+        if (img.src.includes("bag2.png")) {
+            img.src = img1; // Change to the first image
+        } else if (img.src.includes("removebg-preview.png")) {
+            img.src = img2; // Change to the second image
+        } else {
+            img.src = "../bag2.png"; // Reset to the original image if it's neither
+        }
+        
+        // Change size and position of the image
+        img.style.height = "350px"; // Set height to 200px
+        img.style.transform = "translateY(40px)"; // Move the image down by 100px
+    }
+</script>
+    
   </body>
 </body>
 </html>
