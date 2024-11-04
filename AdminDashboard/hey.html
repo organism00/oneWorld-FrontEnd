@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+    <title>Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@latest"></script>
+  </head>
+  <body class="flex bg-gray-100">
+    <div class="sidebar fixed w-64 bg-pink-200 h-screen flex flex-col p-5">
+      <div class="logo flex items-center mb-8">
+        <img src="#" alt="Logo" class="mr-2 w-8 h-8" />
+        <span class="text-xl font-semibold">Company Name</span>
+      </div>
+      <ul class="flex-grow">
+        <li
+          class="active bg-purple-600 text-white rounded-lg p-4 mb-2 flex items-center cursor-pointer">
+          <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+        </li>
+        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100">
+          <i class="fas fa-exchange-alt mr-2"></i> Transactions
+        </li>
+        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100">
+          <i class="fas fa-wallet mr-2"></i> Wallet
+        </li>
+        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100">
+          <i class="fas fa-bullseye mr-2"></i> Goals
+        </li>
+        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100">
+          <i class="fas fa-money-bill-wave mr-2"></i> Budget
+        </li>
+        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100">
+          <i class="fas fa-chart-line mr-2"></i> Analytics
+        </li>
+        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100">
+          <i class="fas fa-cog mr-2"></i> Settings
+        </li>
+      </ul>
+      <div class="sidebar-bottom mt-4">
+        <ul class="help-logout text-sm">
+          <li class="flex items-center cursor-pointer hover:bg-purple-100 p-2 mb-1">
+            <i class="fas fa-question-circle mr-2"></i> Help
+          </li>
+          <li class="flex items-center cursor-pointer hover:bg-purple-100 p-2">
+            <i class="fas fa-sign-out-alt mr-2"></i> Logout
+          </li>
+        </ul>
+        <div
+          class="mode-toggle flex justify-between w-24 items-center bg-white rounded-full p-2 mt-2 shadow-md">
+          <i
+            class="fas fa-sun cursor-pointer text-white rounded-full bg-purple-600 p-2 transition duration-300 ease-in-out transform hover:scale-105"></i>
+          <i class="fas fa-moon cursor-pointer text-gray-600"></i>
+        </div>
+      </div>
+    </div>
+
+    <div class="main-content flex-grow ml-64 overflow-y-auto h-screen">
+      <div class="header flex justify-between items-center p-5 bg-white shadow-md">
+        <div class="welcome">
+          <h1 class="text-2xl font-semibold">Welcome back, Yusrah!</h1>
+          <p class="text-gray-600">Here's what's happening with your account.</p>
+        </div>
+        <div class="flex items-center space-x-4">
+          <div class="relative">
+            <i
+              class="fas fa-search cursor-pointer text-gray-600 bg-white rounded-full p-3 shadow-md text-xl"></i>
+          </div>
+          <div class="relative">
+            <i
+              class="fas fa-bell cursor-pointer text-gray-600 bg-white rounded-full p-3 shadow-md text-xl"></i>
+            <span
+              class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center"
+              >1</span
+            >
+          </div>
+          <div class="flex items-center space-x-2 bg-white rounded-full p-2 mt-2 shadow-md">
+            <img src="profile-image-url" alt="Profile" class="w-10 h-10 rounded-full" />
+            <div class="flex flex-col">
+              <span class="text-gray-800">Yusrah</span>
+              <span class="text-gray-500 text-xs">User Role</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between p-2">
+        <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-2 bg-white rounded-full p-2 shadow-md">
+            <i class="fas fa-calendar-alt text-gray-600"></i>
+            <span class="text-gray-800">Calendar</span>
+          </div>
+          <div class="flex items-center space-x-2 bg-white rounded-full p-2 shadow-md">
+            <i class="fas fa-info-circle text-gray-600"></i>
+            <span class="text-gray-800">Info</span>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <div class="flex items-center space-x-2 bg-white rounded-full p-2 shadow-md">
+            <i class="fas fa-check-circle text-gray-600"></i>
+            <span class="text-gray-800">Tasks</span>
+          </div>
+          <div
+            class="flex items-center space-x-2 bg-purple-600 text-white rounded-full p-2 shadow-md cursor-pointer">
+            <i class="fas fa-plus"></i>
+            <span>Add More Stuff</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Total Balance</h2>
+            <i
+              class="fas fa-arrow-up bg-white rounded-full p-2 shadow-md text-green-600 transform rotate-45 ml-2"></i>
+          </div>
+          <p class="text-2xl text-gray-800 mt-5">$10,000<span class="text-gray-300">,00</span></p>
+          <div class="flex items-center mt-3 space-x-2">
+            <span class="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full"
+              >+15%</span
+            >
+            <span class="text-gray-600 text-sm">from last month</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Income</h2>
+            <i
+              class="fas fa-arrow-up bg-white rounded-full p-2 shadow-md text-green-600 transform rotate-45 ml-2"></i>
+          </div>
+          <p class="text-2xl text-green-600 mt-5">$5,000<span class="text-gray-300">,00</span></p>
+          <div class="flex items-center mt-3 space-x-2">
+            <span class="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full"
+              >+10%</span
+            >
+            <span class="text-gray-600 text-sm">from last month</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Expenses</h2>
+            <i
+              class="fas fa-arrow-up bg-white rounded-full p-2 shadow-md text-red-600 transform rotate-45 ml-2"></i>
+          </div>
+          <p class="text-2xl text-red-600 mt-5">$2,500<span class="text-gray-300">,00</span></p>
+          <div class="flex items-center mt-3 space-x-2">
+            <span class="bg-red-500 text-white text-xs font-semibold px-2 py-1 rounded-full"
+              >-5%</span
+            >
+            <span class="text-gray-600 text-sm">from last month</span>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+          <div class="flex items-center justify-between">
+            <h2 class="text-lg font-semibold">Total Savings</h2>
+            <i
+              class="fas fa-arrow-up bg-white rounded-full p-2 shadow-md text-green-600 transform rotate-45 ml-2"></i>
+          </div>
+          <p class="text-2xl text-blue-600 mt-5">$7,500<span class="text-gray-300">,00</span></p>
+          <div class="flex items-center mt-3 space-x-2">
+            <span class="bg-green-500 text-white text-xs font-semibold px-2 py-1 rounded-full"
+              >+20%</span
+            >
+            <span class="text-gray-600 text-sm">from last month</span>
+          </div>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 p-3">
+        <!-- Bar Chart Container -->
+        <div class="bg-white rounded-lg shadow-md p-5 relative col-span-2">
+          <h2 class="text-lg font-semibold mb-4">Money Flow</h2>
+          <div class="absolute top-4 right-5 flex space-x-2">
+            <span class="text-gray-600 text-sm bg-white rounded-full p-1 shadow-md font-semibold"
+              >Income</span
+            >
+            <span class="text-gray-600 text-sm bg-white rounded-full p-1 shadow-md font-semibold"
+              >Expenses</span
+            >
+            <span class="text-gray-600 text-sm bg-white rounded-full p-1 shadow-md font-semibold"
+              >All Permissions</span
+            >
+            <span class="text-gray-600 text-sm bg-white rounded-full p-1 shadow-md font-semibold"
+              >This year</span
+            >
+          </div>
+          <canvas
+            id="moneyFlowChart"
+            class="w-full"
+            style="height: 200px; max-height: 200px"></canvas>
+
+          <!-- Reduced height here -->
+        </div>
+
+        <!-- Circular Progress Bar Container -->
+        <div class="bg-white rounded-lg shadow-md p-5">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-lg font-semibold">Budget</span>
+            <i
+              class="fas fa-arrow-up bg-white rounded-full p-2 shadow-md text-green-600 transform rotate-45 ml-2"></i>
+          </div>
+          <div class="flex">
+            <div class="flex-1 mt-4">
+              <ul class="list-disc list-inside">
+                <li>Item 1 - $9,000</li>
+                <li>Item 2 - $12,000</li>
+                <li>Item 3 - $8,000</li>
+                <li>Item 4 - $6,000</li>
+                <li>Item 5 - $10,000</li>
+                <li>Item 6 - $10,950</li>
+              </ul>
+            </div>
+            <div class="flex items-center justify-center relative mt-4">
+              <canvas id="budgetProgress"></canvas>
+              <div
+                class="absolute text-xl font-bold"
+                style="
+                  width: 160px; /* Increased width */
+                  height: 160px; /* Increased height */
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                ">
+                55,950
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 p-3">
+        <!-- Recent Transactions Container -->
+        <div class="bg-white rounded-lg shadow-md p-5 relative col-span-2">
+          <h2 class="text-lg font-semibold mb-4">Recent Transactions</h2>
+          <div class="absolute top-4 right-5 flex space-x-2">
+            <span class="text-gray-600 text-sm bg-white rounded-full p-1 shadow-md font-semibold"
+              >Last 7 Days</span
+            >
+            <span class="text-gray-600 text-sm bg-white rounded-full p-1 shadow-md font-semibold"
+              >Last 30 Days</span
+            >
+          </div>
+
+          <!-- Header Row -->
+          <div class="grid grid-cols-5 text-sm font-semibold mb-2 bg-gray-200 p-2 rounded">
+            <div>Date</div>
+            <div>Amount</div>
+            <div>Media</div>
+            <div>Category</div>
+            <div>Status</div>
+          </div>
+
+          <!-- Transaction Rows -->
+          <div class="grid grid-cols-5 text-sm mb-2 gap-4">
+            <div class="py-2">2024-10-01</div>
+            <div class="py-2 text-green-600">$200</div>
+            <div class="py-2">💳</div>
+            <div class="py-2">Groceries</div>
+            <div class="py-2 text-green-500">Completed</div>
+          </div>
+          <div class="grid grid-cols-5 text-sm mb-2 gap-4">
+            <div class="py-2">2024-10-02</div>
+            <div class="py-2 text-red-600">$150</div>
+            <div class="py-2">🛒</div>
+            <div class="py-2">Shopping</div>
+            <div class="py-2 text-red-500">Pending</div>
+          </div>
+          <div class="grid grid-cols-5 text-sm mb-2 gap-4">
+            <div class="py-2">2024-10-03</div>
+            <div class="py-2 text-green-600">$300</div>
+            <div class="py-2">🏦</div>
+            <div class="py-2">Salary</div>
+            <div class="py-2 text-green-500">Completed</div>
+          </div>
+          <div class="grid grid-cols-5 text-sm mb-2 gap-4">
+            <div class="py-2">2024-10-04</div>
+            <div class="py-2 text-red-600">$50</div>
+            <div class="py-2">🍔</div>
+            <div class="py-2">Food</div>
+            <div class="py-2 text-red-500">Cancelled</div>
+          </div>
+          <div class="grid grid-cols-5 text-sm mb-2 gap-4">
+            <div class="py-2">2024-10-05</div>
+            <div class="py-2 text-green-600">$75</div>
+            <div class="py-2">💻</div>
+            <div class="py-2">Electronics</div>
+            <div class="py-2 text-green-500">Completed</div>
+          </div>
+        </div>
+
+        <!-- Saving Goals Container -->
+        <div class="bg-white rounded-lg shadow-md p-5">
+          <div class="flex items-center justify-between mb-4">
+            <span class="text-lg font-semibold">Saving Goals</span>
+            <i
+              class="fas fa-arrow-up bg-white rounded-full p-2 shadow-md text-green-600 transform rotate-45 ml-2"></i>
+          </div>
+
+          <!-- Goal 1 -->
+          <div class="mb-4">
+            <div class="flex justify-between">
+              <span>Goal 1: Vacation</span>
+              <span>100%</span>
+            </div>
+            <div class="relative w-full bg-gray-200 rounded-full h-4">
+              <!-- Increased height -->
+              <div class="bg-green-500 h-4 rounded-full" style="width: 60%"></div>
+              <span
+                class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-semibold text-xs"
+                >60%</span
+              >
+              <!-- Reduced font size -->
+            </div>
+          </div>
+
+          <!-- Goal 2 -->
+          <div class="mb-4">
+            <div class="flex justify-between">
+              <span>Goal 2: New Car</span>
+              <span>100%</span>
+            </div>
+            <div class="relative w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-blue-500 h-4 rounded-full" style="width: 40%"></div>
+              <span
+                class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-semibold text-xs"
+                >40%</span
+              >
+            </div>
+          </div>
+
+          <!-- Goal 3 -->
+          <div class="mb-4">
+            <div class="flex justify-between">
+              <span>Goal 3: Emergency Fund</span>
+              <span>100%</span>
+            </div>
+            <div class="relative w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-yellow-500 h-4 rounded-full" style="width: 80%"></div>
+              <span
+                class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-semibold text-xs"
+                >80%</span
+              >
+            </div>
+          </div>
+
+          <!-- Goal 4 -->
+          <div class="mb-4">
+            <div class="flex justify-between">
+              <span>Goal 4: Home Renovation</span>
+              <span>100%</span>
+            </div>
+            <div class="relative w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-red-500 h-4 rounded-full" style="width: 30%"></div>
+              <span
+                class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-semibold text-xs"
+                >30%</span
+              >
+            </div>
+          </div>
+
+          <!-- Goal 5 -->
+          <div class="mb-4">
+            <div class="flex justify-between">
+              <span>Goal 5: Education Fund</span>
+              <span>100%</span>
+            </div>
+            <div class="relative w-full bg-gray-200 rounded-full h-4">
+              <div class="bg-purple-500 h-4 rounded-full" style="width: 50%"></div>
+              <span
+                class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white font-semibold text-xs"
+                >50%</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Bar Chart for Money Flow
+      const ctxBar = document.getElementById("moneyFlowChart").getContext("2d");
+      const moneyFlowChart = new Chart(ctxBar, {
+        type: "bar",
+        data: {
+          labels: ["January", "February", "March", "April", "May", "June", "July"], // All months
+          datasets: [
+            {
+              label: "Income",
+              data: [1200, 1900, 3000, 500, 2200, 1800, 1500], // All data points
+              backgroundColor: "rgba(128, 0, 128, 0.6)", // Purple
+              borderColor: "rgba(128, 0, 128, 1)",
+              borderWidth: 1,
+              borderRadius: 10,
+              barThickness: 20,
+              categoryPercentage: 0.6,
+              barPercentage: 0.8,
+            },
+            {
+              label: "Expenses",
+              data: [800, 1500, 2500, 1000, 1200, 900, 800], // All data points
+              backgroundColor: "rgba(200, 162, 200, 0.6)", // Light Purple
+              borderColor: "rgba(200, 162, 200, 1)",
+              borderWidth: 1,
+              borderRadius: 10,
+              barThickness: 20,
+              categoryPercentage: 0.6,
+              barPercentage: 0.8,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false, // This allows you to control the height
+          scales: {
+            y: {
+              beginAtZero: true,
+              ticks: {
+                stepSize: 1000, // Adjust this value based on your data
+                callback: function (value) {
+                  if (value % 1000 === 0) {
+                    return value;
+                  }
+                },
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: true,
+            },
+          },
+        },
+      });
+
+      const totalBudget = 55950;
+      const items = [9000, 12000, 8000, 6000, 10000, 10950]; // Costs of items
+      const colors = ["#FF6384", "#36A2EB", "#FFCE56", "#4BC0C0", "#9966FF", "#FF9F40"]; // Colors for each item
+
+      const totalSpent = items.reduce((acc, cost) => acc + cost, 0); // Calculate total spent
+      const budgetPercentage = (totalSpent / totalBudget) * 100; // Calculate percentage
+
+      const canvas = document.getElementById("budgetProgress");
+      const ctxCircle = canvas.getContext("2d");
+      const radius = 60; // Radius for the circular segments
+      const innerRadius = 50; // Radius for the inner circle
+      const gap = 0.05; // Gap between segments
+
+      canvas.width = 160; // Keep the canvas size the same
+      canvas.height = 160; // Keep the canvas size the same
+
+      ctxCircle.clearRect(0, 0, canvas.width, canvas.height);
+      ctxCircle.lineWidth = 8; // Base thickness of the background circle
+      ctxCircle.strokeStyle = "#e0e0e0"; // Background circle
+      ctxCircle.beginPath();
+      ctxCircle.arc(80, 80, radius, 0, 2 * Math.PI);
+      ctxCircle.stroke();
+
+      // Draw each item's budget segment with gaps
+      let startAngle = -Math.PI / 2; // Start from the top
+      items.forEach((cost, index) => {
+        const itemPercentage = (cost / totalBudget) * 100; // Calculate item percentage
+        const endAngle = startAngle + (itemPercentage / 100) * 2 * Math.PI - gap; // Calculate end angle with gap
+
+        ctxCircle.lineWidth = 12; // Increase the line width for colored segments
+        ctxCircle.strokeStyle = colors[index % colors.length]; // Assign color
+        ctxCircle.beginPath();
+
+        // Draw arc for this item's budget
+        ctxCircle.arc(80, 80, radius, startAngle, endAngle);
+        ctxCircle.stroke();
+
+        // Create a small gap
+        startAngle = endAngle + gap; // Update start angle for next item
+      });
+
+      // Draw a slightly smaller inner circle to give a rounded effect
+      ctxCircle.lineWidth = 8; // Inner circle thickness
+      ctxCircle.strokeStyle = "#fff"; // Inner circle color (white)
+      ctxCircle.beginPath();
+      ctxCircle.arc(80, 80, innerRadius, 0, 2 * Math.PI);
+      ctxCircle.stroke();
+
+      // Display the percentage in the center of the circle
+      document.querySelector(".absolute").textContent = ${budgetPercentage.toFixed(0)}%;
+    </script>
+  </body>
+</html>
