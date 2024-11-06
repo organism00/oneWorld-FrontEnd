@@ -9,311 +9,358 @@
         <title>Dashboard</title>
 
     </head>
-    <body class="flex">
-        <!-- Sidebar -->
-        <div class="md:grid md:grid-cols-[19rem_1fr]">
-            <div class="sidebar hidden fixed top-0 left-0 bottom-0 md:w-72 bg-red-500 h-screen md:flex flex-col p-5">
-                <div class="logo flex items-center mb-8">
-                <img src="#" alt="Logo" class="mr-2 w-8 h-8" />
-                <span class="text-xl font-semibold">Company Name</span>
-                </div>
-                <ul class="flex-grow">
-                <li
-                    class="active bg-red-600 text-white rounded-lg p-4 mb-2 flex items-center cursor-pointer">
-                    <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
-                </li>
-                <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100 text-white">
-                    <i class="fas fa-exchange-alt mr-2"></i> Transactions
-                </li>
-                <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100 text-white">
-                    <i class="fas fa-wallet mr-2"></i> Wallet
-                </li>
-                <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100 text-white">
-                    <i class="fas fa-bullseye mr-2"></i> Goals
-                </li>
-                <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100 text-white">
-                    <i class="fas fa-money-bill-wave mr-2"></i> Budget
-                </li>
-                <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100 text-white">
-                    <i class="fas fa-chart-line mr-2"></i> Analytics
-                </li>
-                <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-purple-100 text-white">
-                    <i class="fas fa-cog mr-2"></i> Settings
-                </li>
-                </ul>
-                <div class="sidebar-bottom mt-4">
-                <ul class="help-logout text-sm">
-                    <li class="flex items-center cursor-pointer hover:bg-purple-100 p-2 mb-1 text-white">
-                    <i class="fas fa-question-circle mr-2"></i> Help
-                    </li>
-                    <li class="flex items-center cursor-pointer hover:bg-purple-100 p-2 text-white">
-                    <i class="fas fa-sign-out-alt mr-2"></i> Logout
-                    </li>
-                </ul>
-                <div
-                    class="mode-toggle flex justify-between w-24 items-center bg-white rounded-full p-2 mt-2 shadow-lg">
-                    <i
-                    class="fas fa-sun cursor-pointer text-white rounded-full bg-red-600 p-2 transition duration-300 ease-in-out transform hover:scale-105"></i>
-                    <i class="fas fa-moon cursor-pointer text-gray-600"></i>
-                </div>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Welcome -->
-        <section class="bg-[white] p-4">
-            <div class="mt-10">
-                <h1 class="text-2xl font-semibold">Welcome back, Yusrah!</h1>
-                <p class="text-gray-600">Here's what's happening with your account.</p>
-            </div>
-
-            <!-- Calendar -->
-            <div class="flex my-4 space-x-2">
-                <div class="flex items-center space-x-2 bg-white rounded-full p-2 shadow-lg border w-28">
-                    <i class="fas fa-calendar-alt text-gray-600"></i>
-                    <span class="text-gray-800">Calendar</span>
-                </div>
-                <div class="flex items-center space-x-2 bg-[white] rounded-full p-2 shadow-lg border w-28">
-                    <p >This month</p>
-                </div>
-            </div>
-        
-            <!-- TOtal balance -->
-            <div class="flex flex-wrap gap-4 my-2">
-                <div class="w-64 border-2 shadow-lg bg-white p-5 border-gray-300 rounded-xl h-32 text-left font-bold text-xl py-3 "> Total balance
-                    <p class="text-gray-500 py-5">$15,000.00</p>
-                </div> 
-                <div class="w-64 border-2 border-gray-300 rounded-xl h-32 text-left font-bold text-1xl py-3 shadow-lg bg-white p-5"> Income
-                    <p class="text-gray-500 py-5">$15,000.00</p>
-                </div> 
-                <div class="w-64 border-2 border-gray-300 rounded-xl h-32 text-left font-bold text-1xl py-3 shadow-lg bg-white p-5"> Expense
-                    <p class="text-gray-500 py-5">$15,000.00</p>
-                </div>
-                <div class="w-64 border-2 border-gray-300 rounded-xl h-32 text-left font-bold text-1xl py-3 shadow-lg bg-white p-5">Total savings
-                    <p class="text-gray-500 py-5">$15,000.00</p>
-                </div>
-            </div>
-
-            <div class="my-4">
-                <div class="flex lg:justify-between my-2 flex-col lg:flex-row">
-                    <!-- Money Flow Section -->
-                    <div class="rounded-lg border-2 shadow-lg p-4">
-                        <div class="flex justify-between items-center text-center p-1mb-5 bg-white w-[640px]  border-2 border-gray-50 rounded">
-                            <h2 class="text-xl font-semibold  relative">Moneyflow</h2>
-                            <div class="flex space-x-3 relative right-16">
-                                <div class="flex items-center -x-2 px-2 ">
-                                    <span class="w-3 h-3 bg-red-500 roundespaced-full"></span>
-                                    <span>Income</span>
-                                </div>
-                                <div class="flex items-center space-x-2 px-2  ">
-                                    <span class="w-3 h-3 bg-red-300 roundespaced-full "></span>
-                                    <span>Expense</span>
-                                </div>
-                                <div class="flex items-center space-x-2">
-                                    <select class="border rounded px-2  ">
-                                        <option>All accounts</option>
-                                    </select>
-                                    <select class="border rounded px-2">
-                                        <option>This year</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class=" ">
-                            <div class="flex justify-between p-3 items-end left-24 bg-white h-2/5 w-[640px]">
-                                <div class="flex flex-col items-center">
-                                    <div class="bg-red-500 w-8 h-20"></div>
-                                    <div class="bg-red-300 w-8 h-8 mt-1"></div>
-                                    <span class="mt-2 text-gray-500">Jan</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="bg-red-500 w-8 h-24"></div>
-                                    <div class="bg-red-300 w-8 h-16 mt-1"></div>
-                                    <span class="mt-2 text-gray-500">Feb</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="bg-red-500 w-8 h-24"></div>
-                                    <div class="bg-red-300 w-8 h-24 mt-1"></div>
-                                    <span class="mt-2 text-gray-500">Mar</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="bg-red-500 w-8 h-24"></div>
-                                    <div class="bg-red-300 w-8 h-24 mt-1"></div>
-                                    <span class="mt-2 text-gray-500">Apr</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="bg-red-500 w-8 h-24"></div>
-                                    <div class="bg-red-300 w-8 h-8 mt-1"></div>
-                                    <span class="mt-2 text-gray-500">May</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="bg-red-500 w-8 h-24"></div>
-                                    <div class="bg-red-300 w-8 h-16 mt-1"></div>
-                                    <span class="mt-2 text-gray-500">Jun</span>
-                                </div>
-                                <div class="flex flex-col items-center">
-                                    <div class="bg-red-500 w-8 h-16"></div>
-                                    <div class="bg-red-300 w-8 h-8 mt-1"></div>
-                                    <span class="mt-2 text-gray-500">Jul</span>
-                                </div>
-                            </div>
-                        </div>
+    <body class="overflow-x-hidden">
+        <button class="fixed sm:hidden text-right">
+            click here
+        </button>
+         <div class="ml-[-500px] hidden sm:ml-0 sm:block top-0 fixed">
+            <div class="md:grid md:grid-cols-[32rem_10fr]">
+                <div class="sidebar md:w-56 bg-red-500 h-screen md:flex flex-col p-5 rounded-md">
+                    <div class="logo flex items-center mb-8">
+                        <img src="One world.jpeg" alt="Logo" class="mr-2 w-8 h-8" />
+                        <span class="text-xl font-semibold"><i>One world</i></span>
                     </div>
-                    <!-- Budget Section -->
-                    <div class="p-6 lg:w-96 bg-white border-2 border-gray-100 rounded-xl shadow-lg ">
-                        <div class="flex justify-between items-center mb-4">
-                            <h2 class="text-xl font-semibold">Budget</h2>
-                            <i class="fas fa-arrow-up-right"></i>
-                        </div>
-            
-                        <div class="flex gap-10">
-                            <div class="relative">
-                                <div class="flex items-center mb-2">
-                                    <span class="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
-                                    <span>Cafe & Restaurants</span>
-                                </div>
-                                <div class="flex items-center mb-2">
-                                    <span class="w-3 h-3 bg-red-400 rounded-full mr-2"></span>
-                                    <span>Entertainment</span>
-                                </div>
-                                <div class="flex items-center mb-2">
-                                    <span class="w-3 h-3 bg-red-300 rounded-full mr-2"></span>
-                                    <span>Investments</span>
-                                </div>
-                                <div class="flex items-center mb-2">
-                                    <span class="w-3 h-3 bg-red-200 rounded-full mr-2"></span>
-                                    <span>Food & Groceries</span>
-                                </div>
-                                <div class="flex items-center mb-2">
-                                    <span class="w-3 h-3 bg-red-100 rounded-full mr-2"></span>
-                                    <span>Health & Beauty</span>
-                                </div>
-                                <div class="flex items-center mb-2">
-                                    <span class="w-3 h-3 bg-red-50 rounded-full mr-2"></span>
-                                    <span>Traveling</span>
-                                </div>
-                            </div>
-            
-                            <div class="flex flex-col items-center">
-                                <div class="relative w-32 h-32">
-                                    <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
-                                        <path class="text-gray-300" d="M18 2.0845
-                                            a 15.9155 15.9155 0 0 1 0 31.831
-                                            a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2" stroke="currentColor"></path>
-                                        <path class="text-red-500" d="M18 2.0845
-                                            a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke-width="2" stroke="currentColor" stroke-dasharray="70, 100"></path>
-                                    </svg>
-                                    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
-                                        <div class="text-sm font-semibold">7%</div>
-                                        <div class="text-xs text-gray-500">$400</div>
+                    <ul class="flex-grow">
+                        <li class="active bg-red-600 text-white rounded-lg p-4 mb-2 flex items-center cursor-pointer">
+                            <i class="fas fa-tachometer-alt mr-2"></i> Dashboard
+                        
+                        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-black text-white">
+                            <i class="fas fa-exchange-alt mr-2"></i>
+                             
+                        
+                                <div class="relative">
+                                    <button class="bg-transparent w-full text-white text-left px-4 py-2 rounded-lg hover:bg-black focus:outline-none" id="dropdownMenuButton">
+                                        Products <i class="fas fa-caret-down ml-2"></i>
+                                    </button>
+                                    <div id="dropdownMenu" class="absolute left-0 mt-2 w-full bg-red-400 rounded-lg shadow-lg hidden">
+                                        <a href="landingPage.html" class="block px-4 py-2 text-white hover:bg-red-500 rounded-t-lg">Add Products</a>
+                                        <a href="test.html" class="block px-4 py-2 text-white hover:bg-red-500">View Products</a>
                                     </div>
                                 </div>
-                                <div class="">
-                                    <div class="text-2xl font-semibold">$5,950.00</div>
-                                    <div class="text-gray-500">Total for month</div>
+                        </li>
+                        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-black text-white">
+                        <div class="relative">
+                            <button class="bg-transparent w-full text-white text-left px-4 py-2 rounded-lg hover:bg-black focus:outline-none" id="dropdownMenuButton">
+                                Order <i class="fas fa-caret-down ml-2"></i>
+                            </button>
+                            <div id="dropdownMenu2" class="absolute left-0 mt-2 w-full bg-red-400 rounded-lg shadow-lg hidden">
+                                <a href="landingPage.html" class="block px-4 py-2 text-white hover:bg-red-500 rounded-t-lg"> <i class="fas fa-wallet mr-2"></i> Order</a>
+                                <a href="test.html" class="block tpx-4 py-2 text-white hover:bg-red-500">Check order</a>
+                            </div>
+                        </div>
+                        </li>
+                       
+                        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-black text-white">
+                            <div class="relative">
+                                <button class="bg-transparent w-full text-white text-left px-4 py-2 rounded-lg hover:bg-black focus:outline-none" id="dropdownMenuButton">
+                                    Staff <i class="fas fa-caret-down ml-2"></i>
+                                </button>
+                                <div id="dropdownMenu" class="absolute left-0 mt-2 w-full bg-red-400 rounded-lg shadow-lg hidden">
+                                    <a href="landingPage.html" class="block px-4 py-2 text-white hover:bg-red-500 rounded-t-lg"> <i class="fas fa-user mr-2"></i> Staff</a>
+                                    <a href="test.html" class="block tpx-4 py-2 text-white hover:bg-red-500">View staff</a>
                                 </div>
                             </div>
-                        </div>
-                        
-                    </div>
-                </div>
-            
-                <div class="flex flex-col lg:flex-row gap-4 my-4 lg:justify-between">
-                    <!-- Recent transaction -->
-                    <div class="bg-white p-4  space-y-2 border-gray-200 shadow-lg border rounded-xl">
-                        <div class="">
-                            <div class="flex justify-between my-4 rounded-md">
-                                <p class="font-bold text-1xl"><i>Recent Transactions</i></p>
-                                <div class="space-x-2">
-                                    <select name="" id="" class="bg-white rounded-md shadow-lg">
-                                        <option value="">All accounts</option>
-                                    </select>
-                                    <select name="" id="" class="bg-white rounded-md shadow-lg">
-                                        <option value="">See all</option>
-                                    </select>
-                                </div>
-                            </div>
-                
-                            <table class="w-[100%]" style="border-spacing: 15px 15px;">
-                                <thead class="text-left py-4">
-                                    <tr class="  bg-red-300 rounded-md">
-                                        <th class="p-4">DATE</th>
-                                        <th class="p-4">AMOUNT</th>
-                                        <th class="p-4">PAYMENT NAME</th>
-                                        <th class="p-4">METHOD</th>
-                                        <th class="p-4">CATEGORY</th>
-                                    </tr>
-                                </thead>
-                
-                                <tbody class="">
-                                    <tr class="p-3">
-                                        <td class="p-4">25 JULY 12:30</td>
-                                        <td class="p-4">-$10</td>
-                                        <td class="p-4">YOUTUBE</td>
-                                        <td class="p-4">VISA **3254</td>
-                                        <td class="p-4">SUBSCRIPTION</td>
-                                    </tr>
-                                    <tr class="p-3">
-                                        <td class="p-4">26 July 15:00</td>
-                                        <td class="p-4">-$150</td>
-                                        <td class="p-4">Reserved</td>
-                                        <td class="p-4">Mastercard **2154</td>
-                                        <td class="p-4">Shopping</td>
-                                    </tr>
-                                    <tr class="p-2">
-                                        <td class="p-4">25 July 9:00</td>
-                                        <td class="p-4">$-80</td>
-                                        <td class="p-4">Yaposhika</td>
-                                        <td class="p-4">Mastercard **2154</td>
-                                        <td class="p-4">Cafe and Restaurants</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                
-                    <!-- Saving goal -->
-                    <div class="bg-white rounded-lg shadow-lg h-55% lg:w-96 p-5 border">
-                        <div class="flex justify-between items-center mb-4">
-                            <h2 class="text-lg font-semibold">Saving goals</h2>
-                            <div class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
-                                <i class="fas fa-arrow-up-right"></i>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span>MacBook Pro</span>
-                                <span class="text-red-600">$1,650</span>
-                            </div>
-                            <div class="w-full bg-red-100 rounded-full h-4">
-                                <div class="bg-red-600 h-4 rounded-full text-xs text-white text-center" style="width: 25%">25%</div>
-                            </div>
-                        </div>
-                        <div class="mb-4">
-                            <div class="flex justify-between mb-1">
-                                <span>New car</span>
-                                <span class="text-red-600">$60,000</span>
-                            </div>
-                            <div class="w-full bg-red-100 rounded-full h-4">
-                                <div class="bg-red-600 h-4 rounded-full text-xs text-white text-center" style="width: 42%">42%</div>
-                            </div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between mb-1">
-                                <span>New house</span>
-                                <span class="text-red-600">$150,000</span>
-                            </div>
-                            <div class="w-full bg-red-100 rounded-full h-4">
-                                <div class="bg-red-600 h-4 rounded-full text-xs text-white text-center" style="width: 3%">3%</div>
-                            </div>
+                            </li>
+                           
+                        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-black text-white">
+                            <i class="fas fa-money-bill-wave mr-2"></i>Bugdet 
+                        </li>
+                        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-black text-white">
+                            <i class="fas fa-chart-line mr-2"></i> Analytics
+                        </li>
+                        <li class="p-4 mb-2 flex items-center cursor-pointer hover:bg-black text-white">
+                            <i class="fas fa-cog mr-2"></i> Settings
+                        </li>
+                    </ul>
+                    <div class="sidebar-bottom mt-4">
+                        <ul class="help-logout text-sm">
+                            <li class="flex items-center cursor-pointer hover:bg-black p-2 mb-1 text-white">
+                                <i class="fas fa-question-circle mr-2"></i> Help
+                            </li>
+                            <li class="flex items-center cursor-pointer hover:bg-black p-2 text-white">
+                                <i class="fas fa-sign-out-alt mr-2"></i> Logout
+                            </li>
+                        </ul>
+                        <div class="mode-toggle flex justify-between w-24 items-center bg-white rounded-full p-2 mt-2 shadow-lg">
+                            <i class="fas fa-sun cursor-pointer text-white rounded-full bg-red-600 p-2 transition duration-300 ease-in-out transform hover:scale-105"></i>
+                            <i class="fas fa-moon cursor-pointer text-gray-600"></i>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+         </div>
+        <!-- Welcome -->
+            <section class="sm:ml-64">
+                <div class="mt-10">
+                    <h1 class="text-2xl font-semibold">Welcome back, Yusrah!</h1>
+                    <p class="text-gray-600">Here's what's happening with your account.</p>
+                </div>
+
+                <!-- Calendar -->
+                <div class="flex my-4 space-x-2">
+                    <div class="flex items-center space-x-2 bg-white rounded-full p-2 shadow-lg border w-28">
+                        <i class="fas fa-calendar-alt text-gray-600"></i>
+                        <span class="text-gray-800">Calendar</span>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-[white] rounded-full p-2 shadow-lg border w-28">
+                        <p >This month</p>
+                    </div>
+                </div>
+            
+                <!-- TOtal balance -->
+                <div class="flex ">
+                    <div class=" flex">
+                        <div class="w-60 border-2 shadow-lg bg-white p-5 border-gray-300 rounded-xl h-32 text-left font-bold text-xl py-3 "> Total balance
+                            <p class="text-gray-500 py-5">$15,000.00</p>
+                        </div> 
+                        <div class="w-60 border-2 border-gray-300 rounded-xl h-32 text-left font-bold text-1xl py-3 shadow-lg bg-white p-5"> Income
+                            <p class="text-gray-500 py-5">$15,000.00</p>
+                        </div>
+                    </div> 
+                   <div class="flex">
+                    <div class="w-60 border-2 border-gray-300 rounded-xl h-32 text-left font-bold text-1xl py-3 shadow-lg bg-white p-5"> Expense
+                        <p class="text-gray-500 py-5">$15,000.00</p>
+                    </div>
+                    <div class="w-60 border-2 border-gray-300 rounded-xl h-32 text-left font-bold text-1xl py-3 shadow-lg bg-white p-5">Total savings
+                        <p class="text-gray-500 py-5">$15,000.00</p>
+                    </div>
+                   </div>
+                </div>
+
+                <div class="my-4">
+                    <div class="flex lg:justify-between my-2 flex-col lg:space-x-5 w-[500px] sm:w-[900px] lg:flex-row">
+                        <!-- Money Flow Section -->
+                        <div class="rounded-lg border-2 p-4">
+                            <div class="flex items-center justify-between space-x-6 text-center md:p-1 mb-5 bg-white  md:w-[800px]">
+                                <h2 class="text-xl font-semibold">Moneyflow</h2>
+                                <div class="flex md:space-x-2">
+                                    <div class="flex items-center">
+                                        <span class="w-3 h-3 bg-red-500 roundespaced-full"></span>
+                                        <span>Income</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <span class="w-3 h-3 bg-red-300 roundespaced-full "></span>
+                                        <span>Expense</span>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <select class="border rounded px-2  ">
+                                            <option>All accounts</option>
+                                        </select>
+                                        <select class="border rounded px-2">
+                                            <option>This year</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="flex sm:px-5 justify-between p-3 items-end bg-white h-2/5 w-[450px] sm:w-[800px]">
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-red-500 w-8 h-20"></div>
+                                        <div class="bg-red-300 w-8 h-8 mt-1"></div>
+                                        <span class="mt-2 text-gray-500">Jan</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-red-500 w-8 h-24"></div>
+                                        <div class="bg-red-300 w-8 h-16 mt-1"></div>
+                                        <span class="mt-2 text-gray-500">Feb</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-red-500 w-8 h-24"></div>
+                                        <div class="bg-red-300 w-8 h-24 mt-1"></div>
+                                        <span class="mt-2 text-gray-500">Mar</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-red-500 w-8 h-24"></div>
+                                        <div class="bg-red-300 w-8 h-24 mt-1"></div>
+                                        <span class="mt-2 text-gray-500">Apr</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-red-500 w-8 h-24"></div>
+                                        <div class="bg-red-300 w-8 h-8 mt-1"></div>
+                                        <span class="mt-2 text-gray-500">May</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-red-500 w-8 h-24"></div>
+                                        <div class="bg-red-300 w-8 h-16 mt-1"></div>
+                                        <span class="mt-2 text-gray-500">Jun</span>
+                                    </div>
+                                    <div class="flex flex-col items-center">
+                                        <div class="bg-red-500 w-8 h-16"></div>
+                                        <div class="bg-red-300 w-8 h-8 mt-1"></div>
+                                        <span class="mt-2 text-gray-500">Jul</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Budget Section -->
+                        <div class="p-6 lg:w-96 bg-white border-2 border-gray-100 rounded-xl shadow-lg ">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-xl font-semibold">Budget</h2>
+                                <i class="fas fa-arrow-up-right"></i>
+                            </div>
+                
+                            <div class="flex gap-10">
+                                <div class="relative">
+                                    <div class="flex items-center mb-2">
+                                        <span class="w-3 h-3 bg-red-500 rounded-full mr-2"></span>
+                                        <span>Cafe & Restaurants</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <span class="w-3 h-3 bg-red-400 rounded-full mr-2"></span>
+                                        <span>Entertainment</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <span class="w-3 h-3 bg-red-300 rounded-full mr-2"></span>
+                                        <span>Investments</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <span class="w-3 h-3 bg-red-200 rounded-full mr-2"></span>
+                                        <span>Food & Groceries</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <span class="w-3 h-3 bg-red-100 rounded-full mr-2"></span>
+                                        <span>Health & Beauty</span>
+                                    </div>
+                                    <div class="flex items-center mb-2">
+                                        <span class="w-3 h-3 bg-red-50 rounded-full mr-2"></span>
+                                        <span>Traveling</span>
+                                    </div>
+                                </div>
+                
+                                <div class="flex flex-col items-center">
+                                    <div class="relative w-32 h-32">
+                                        <svg class="absolute top-0 left-0 w-full h-full" viewBox="0 0 36 36">
+                                            <path class="text-gray-300" d="M18 2.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831
+                                                a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke-width="2" stroke="currentColor"></path>
+                                            <path class="text-red-500" d="M18 2.0845
+                                                a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke-width="2" stroke="currentColor" stroke-dasharray="70, 100"></path>
+                                        </svg>
+                                        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
+                                            <div class="text-sm font-semibold">7%</div>
+                                            <div class="text-xs text-gray-500">$400</div>
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="text-2xl font-semibold">$5,950.00</div>
+                                        <div class="text-gray-500">Total for month</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                
+                    <div class="flex flex-col lg:flex-row gap-4 my-4 lg:justify-between">
+                        <!-- Recent transaction -->
+                        <div class="bg-white p-4 w-[550px] space-y-2 border-gray-200 shadow-lg border rounded-xl">
+                            <div class="">
+                                <div class="flex justify-center my-4 rounded-md">
+                                    <p class="font-bold text-1xl"><i>Recent Transactions</i></p>
+                                    <div class="space-x-2">
+                                        <select name="" id="" class="bg-white rounded-md shadow-lg">
+                                            <option value="">All accounts</option>
+                                        </select>
+                                        <select name="" id="" class="bg-white rounded-md shadow-lg">
+                                            <option value="">See all</option>
+                                        </select>
+                                    </div>
+                                </div>
+                    
+                                <table class="w-full" style="border-spacing: 15px 15px;">
+                                    <thead class="text-left py-4 text-sm">
+                                        <tr class="  bg-red-300 rounded-md">
+                                            <th class="p-4">DATE</th>
+                                            <th class="p-4">AMOUNT</th>
+                                            <th class="p-4">PAYMENT NAME</th>
+                                            <th class="p-4">METHOD</th>
+                                            <th class="p-4">CATEGORY</th>
+                                        </tr>
+                                    </thead>
+                    
+                                    <tbody class="">
+                                        <tr class="p-3">
+                                            <td class="p-4">25 JULY 12:30</td>
+                                            <td class="p-4">-$10</td>
+                                            <td class="p-4">YOUTUBE</td>
+                                            <td class="p-4">VISA **3254</td>
+                                            <td class="p-4">SUBSCRIPTION</td>
+                                        </tr>
+                                        <tr class="p-3">
+                                            <td class="p-4">26 July 15:00</td>
+                                            <td class="p-4">-$150</td>
+                                            <td class="p-4">Reserved</td>
+                                            <td class="p-4">Mastercard **2154</td>
+                                            <td class="p-4">Shopping</td>
+                                        </tr>
+                                        <tr class="p-2">
+                                            <td class="p-4">25 July 9:00</td>
+                                            <td class="p-4">$-80</td>
+                                            <td class="p-4">Yaposhika</td>
+                                            <td class="p-4">Mastercard **2154</td>
+                                            <td class="p-4">Cafe and Restaurants</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    
+                        <!-- Saving goal -->
+                        <div class="bg-white rounded-lg shadow-lg h-55% lg:w-96 p-5 border">
+                            <div class="flex justify-between items-center mb-4">
+                                <h2 class="text-lg font-semibold">Saving goals</h2>
+                                <div class="flex items-center justify-center w-8 h-8 bg-gray-100 rounded-full">
+                                    <i class="fas fa-arrow-up-right"></i>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex justify-between mb-1">
+                                    <span>MacBook Pro</span>
+                                    <span class="text-red-600">$1,650</span>
+                                </div>
+                                <div class="w-full bg-red-100 rounded-full h-4">
+                                    <div class="bg-red-600 h-4 rounded-full text-xs text-white text-center" style="width: 25%">25%</div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <div class="flex justify-between mb-1">
+                                    <span>New car</span>
+                                    <span class="text-red-600">$60,000</span>
+                                </div>
+                                <div class="w-full bg-red-100 rounded-full h-4">
+                                    <div class="bg-red-600 h-4 rounded-full text-xs text-white text-center" style="width: 42%">42%</div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex justify-between mb-1">
+                                    <span>New house</span>
+                                    <span class="text-red-600">$150,000</span>
+                                </div>
+                                <div class="w-full bg-red-100 rounded-full h-4">
+                                    <div class="bg-red-600 h-4 rounded-full text-xs text-white text-center" style="width: 3%">3%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
         <script src="https://cdn.tailwindcss.com"></script>
     </body>
 </html>
+     <!-- JavaScript to Toggle Dropdown -->
+     <script>
+        document.getElementById('dropdownMenuButton').addEventListener('click', function() {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            dropdownMenu.classList.toggle('hidden');  // Toggle the dropdown visibility
+        });
     
+        // Close the dropdown if clicked outside
+        window.addEventListener('click', function(event) {
+            const dropdownMenu = document.getElementById('dropdownMenu');
+            const button = document.getElementById('dropdownMenuButton');
+            if (!button.contains(event.target)) {
+                dropdownMenu.classList.add('hidden');
+            }
+        });
+    </script>
