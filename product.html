@@ -7,12 +7,18 @@
     <link rel="stylesheet" href="./src/output.css">
     <link rel="stylesheet" href="../fontawesome/css/all.css">
     <script src="tailwind/tailwind.js"></script>
+    <style>
+      .slideshow-img {
+          height: 200px;
+          transition: transform 0.3s;
+      }
+  </style>
 </head>
 <body class="bg-gray-50 font-sans" >
 <div class="bg-white w-screen h-20 shadow-md p-6">
     <img src="IMG-20241029-WA0009.jpg" alt="" class="absolute left-[60px] top-[10px] h-14">
     <a href="#" class="font-bold relative left-[110px] text-2xl">ONE WORLD</a>
-    <a href="#" class="relative left-[250px] text-gray-600 text-lg hover:text-black">Women</a>
+    <a href="#" class="relative left-[250px] text-gray-600 text-lg hover:text-black ">Women</a>
     <a href="#" class="relative left-[270px] text-gray-600 text-lg hover:text-black">Men</a>
     <a href="#" class="relative left-[290px] text-gray-600 text-lg hover:text-black">Children</a>
     <form action="">
@@ -23,9 +29,11 @@
 </div>
   <div class="h-[555px] w-[500px] bg-gray-50 relative top-[10px] left-[50px]">
     <div class="h-[250px] w-[250px] rounded-[50%] bg-yellow-300 relative top-[80px] left-[50px]"></div>
-    <img src="../bag2.png" alt="" class=" h-[450px] relative top-[-287px] left-[150px] " id="toggleImage"  onclick="toggleImageSource()">
-    <img src="../bag-removebg-preview.png" alt="" class="h-40  absolute top-[360px] left-[150px]">
-    <img src="../bag 3.png" alt="" class="h-44  absolute top-[360px] left-[270px]">
+    <img src="../bag2.png" alt="" class=" h-[450px] relative top-[-287px] left-[150px] "  id="mainImage" >
+    <img src="../bag-removebg-preview.png" alt="" class="h-40  absolute top-[360px] left-[150px] cursor-pointer" onclick="showImage('../bag-removebg-preview.png')">
+     <div class="h-10 w-10 bg-white text-red-500  shadow-lg rounded-[50%] absolute top-[450px] left-[450px]  cursor-pointer" onclick="nextImage()"><i class="fa-solid fa-arrow-right relative left-[10px] top-[5px] text-xl"></i></div>
+     <div class="h-10 w-10 bg-white   text-red-500 shadow-lg rounded-[50%] absolute top-[450px] left-[100px] cursor-pointer" onclick="prevImage()"><i class="fa-solid fa-arrow-left relative left-[10px] top-[5px] text-xl"></i></div>
+     <img src="../bag 3.png" alt="" class="h-44  absolute top-[360px] left-[270px]  cursor-pointer" onclick="showImage('../bag 3.png')">
   </div>
   <div class="h-[555px] w-[580px] bg-gray-50 absolute top-[90px] left-[560px] p-6 pl-32">
     <h2  class="text-red-600 font-semibold"> Fashion Handbags</h2>
@@ -139,29 +147,35 @@
      </div>
     </div>
    </footer>
+  
+
+  
    <script>
-    function toggleImageSource() {
-        const img = document.getElementById("toggleImage");
-        
-        // Define the image sources
-        const img1 = "../bag-removebg-preview.png";
-        const img2 = "../bag 3.png";
-        
-        // Check the current source and toggle it
-        if (img.src.includes("bag2.png")) {
-            img.src = img1; // Change to the first image
-        } else if (img.src.includes("removebg-preview.png")) {
-            img.src = img2; // Change to the second image
-        } else {
-            img.src = "../bag2.png"; // Reset to the original image if it's neither
-        }
-        
-        // Change size and position of the image
-        img.style.height = "350px"; // Set height to 200px
-        img.style.transform = "translateY(40px)"; // Move the image down by 100px
+    const images = ['../bag-removebg-preview.png', '../bag 3.png'];
+    let currentImageIndex = 0;
+
+    function showImage(imageSrc) {
+        const mainImage = document.getElementById('mainImage');
+        mainImage.src = imageSrc;
+
+        // Set the size
+        mainImage.style.height = '300px'; // Reduce size to 100px
+
+        // Move down by 500px
+        mainImage.style.position = 'relative'; // Ensure position is relative for 'top' to work
+        mainImage.style.top = '-200px'; // Move down by 500px
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        showImage(images[currentImageIndex]);
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        showImage(images[currentImageIndex]);
     }
 </script>
-    
   </body>
 </body>
 </html>
